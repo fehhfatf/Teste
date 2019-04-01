@@ -1,0 +1,66 @@
+﻿@model SP.Application.ViewModels.ServicoViewModel
+
+@{
+    ViewBag.Title = "Detalhes do serviço";
+}
+
+<h2>Detalhes do serviço</h2>
+
+<div>
+    <h4>Serviço</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fornecedor.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fornecedor.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ServicoId }) |
+    @Html.ActionLink("Voltar a lista", "Index")
+</p>

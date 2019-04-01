@@ -1,0 +1,32 @@
+﻿@model SP.Application.ViewModels.FornecedorViewModel
+
+@{
+    ViewBag.Title = "Excluir fornecedor";
+}
+
+<h2>Excluir fornecedor</h2>
+
+<h3>Confirma a exclusão do registro abaixo?</h3>
+<div>
+    <h4>Fornecedor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar a lista", "Index")
+        </div>
+    }
+</div>
