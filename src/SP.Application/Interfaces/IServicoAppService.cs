@@ -12,6 +12,7 @@ namespace SP.Application.Interfaces
         ServicoViewModel Adicionar(ServicoViewModel obj);
         ServicoViewModel ObterPorId(Guid id);
         ICollection<ServicoViewModel> ObterPorFornecedorId(Guid fornecedorId);
+        ICollection<ServicoViewModel> ObterPorAno(string ano);
         IEnumerable<ServicoViewModel> ObterTodos();
         void Atualizar(ServicoViewModel obj);
         void Remover(Guid id);   

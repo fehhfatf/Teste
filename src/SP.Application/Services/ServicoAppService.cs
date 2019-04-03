@@ -50,10 +50,15 @@ namespace SP.Application.Services
             GC.SuppressFinalize(this);
         }
 
-
         public ICollection<ServicoViewModel> ObterPorFornecedorId(Guid fornecedorId)
         {
             return Mapper.Map<ICollection<ServicoViewModel>>(_servicoService.ObterPorFornecedorId(fornecedorId));
+        }
+
+
+        public ICollection<ServicoViewModel> ObterPorAno(string ano)
+        {
+            return Mapper.Map<ICollection<ServicoViewModel>>(_servicoService.ObterPorAno(ano));
         }
     }
 }

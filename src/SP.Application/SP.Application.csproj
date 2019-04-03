@@ -33,6 +33,10 @@
     <Reference Include="AutoMapper">
       <HintPath>..\..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -53,8 +57,11 @@
     <Compile Include="Services\ClienteAppService.cs" />
     <Compile Include="Services\FornecedorAppService.cs" />
     <Compile Include="Services\ServicoAppService.cs" />
+    <Compile Include="ViewModels\ClientePorMesViewModel.cs" />
     <Compile Include="ViewModels\ClienteViewModel.cs" />
+    <Compile Include="ViewModels\FornecedorPorMesViewModel.cs" />
     <Compile Include="ViewModels\FornecedorViewModel.cs" />
+    <Compile Include="ViewModels\MediaDeValorCobradoPeloFornecedorViewModel.cs" />
     <Compile Include="ViewModels\ServicoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

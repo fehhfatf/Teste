@@ -10,5 +10,6 @@ namespace SP.Domain.Interfaces.Service
     public interface IServicoService : IService<Servico>
     {
         ICollection<Servico> ObterPorFornecedorId(Guid fornecedorId);
+        ICollection<Servico> ObterPorAno(string ano);
     }
 }

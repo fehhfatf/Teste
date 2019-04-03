@@ -25,13 +25,12 @@ namespace SP.Application.ViewModels
         public string Descricao { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo Data de Atendimento")]
-        [Display(Name="Data do Atendimento")]        
-        [DataType(DataType.Date, ErrorMessage = "Data em formato inválido")]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name="Data do Atendimento")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Data { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo Valor")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:F2}")]
+        [RegularExpression(@"^\d+\,\d{0,2}$", ErrorMessage="Máximo de duas casas decimais, utilizando vírgula para separar")]
         public decimal Valor { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo Tipo")]

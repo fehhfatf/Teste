@@ -40,6 +40,44 @@ namespace UI.SP.Controllers
             return View(servico);
         }
 
+        public ActionResult Pesquisar(string de, string ate, string filtrarPor, string contendo, string ordenar)
+        {
+            Guid FornecedorId = _fornecedorAppService.ObterPorUserId(new Guid(User.Identity.GetUserId())).FornecedorId;
+            var servico = _servicoAppService.ObterPorFornecedorId(FornecedorId);
+            if (de != "")
+                servico = servico.Where(s => s.Data >= Convert.ToDateTime(de)).ToList();
+
+            if (ate != "")
+                servico = servico.Where(s => s.Data <= Convert.ToDateTime(ate)).ToList();
+
+            if (filtrarPor != "nada")
+            {
+                if (filtrarPor == "cliente")
+                    servico = servico.Where(s => s.Cliente.Nome.ToUpper().Contains(contendo.ToUpper())).ToList();
+
+                if (filtrarPor == "estado")
+                    servico = servico.Where(s => s.Cliente.Estado.ToUpper().Contains(contendo.ToUpper())).ToList();
+
+                if (filtrarPor == "cidade")
+                    servico = servico.Where(s => s.Cliente.Cidade.ToUpper().Contains(contendo.ToUpper())).ToList();
+
+                if (filtrarPor == "bairro")
+                    servico = servico.Where(s => s.Cliente.Bairro.ToUpper().Contains(contendo.ToUpper())).ToList();
+
+                if (filtrarPor == "tipoServico")
+                    servico = servico.Where(s => s.Tipo.ToUpper().Contains(contendo.ToUpper())).ToList();                                
+            }
+
+            if (ordenar == "valorMinimo")
+                servico = servico.OrderBy(s => s.Valor).ToList();
+
+            if (ordenar == "valorMaximo")
+                servico = servico.OrderByDescending(s => s.Valor).ToList();    
+
+            return PartialView("_servicos", servico);
+        }        
+
+
         // GET: ServicoViewModels/Details/5
         public ActionResult Details(Guid? id)
         {
@@ -103,8 +141,7 @@ namespace UI.SP.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ServicoId,FornecedorId,ClienteId,Descricao,Data,Valor,Tipo")] ServicoViewModel servicoViewModel)
-        {
-            servicoViewModel.FornecedorId = _fornecedorAppService.ObterPorUserId(new Guid(User.Identity.GetUserId())).FornecedorId;
+        {            
             if (ModelState.IsValid)
             {
                 _servicoAppService.Atualizar(servicoViewModel);

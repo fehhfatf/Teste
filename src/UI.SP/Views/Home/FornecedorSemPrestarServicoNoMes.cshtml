@@ -1,0 +1,30 @@
+﻿@model IEnumerable<SP.Application.ViewModels.FornecedorPorMesViewModel>
+
+@{
+    ViewBag.Title = "FornecedorSemPrestarServicoNoMes";
+}
+
+<h2>Em @DateTime.Now.Year fornecedores sem prestar servico por mês</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Mês
+        </th>
+        <th>
+            Fornecedor
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeDoFornecedor)
+            </td>
+        </tr>
+    }
+</table>

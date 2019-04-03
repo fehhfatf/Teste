@@ -38,6 +38,7 @@ namespace SP.Application.ViewModels
         [Required(ErrorMessage = "Preencha o campo Estado")]       
         public string Estado { get; set; }
 
+        public FornecedorViewModel Fornecedor { get; set; }
         public ICollection<ServicoViewModel> Servicos { get; set; }
     }
 }

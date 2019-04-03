@@ -95,9 +95,8 @@ namespace UI.SP.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ClienteId,Nome,Bairro,Cidade,Estado")] ClienteViewModel clienteViewModel)
+        public ActionResult Edit(ClienteViewModel clienteViewModel)
         {
-            clienteViewModel.FornecedorId = _fornecedorAppService.ObterPorUserId(new Guid(User.Identity.GetUserId())).FornecedorId;
             if (ModelState.IsValid)
             {
                 _clienteAppService.Atualizar(clienteViewModel);

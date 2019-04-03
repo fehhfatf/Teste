@@ -21,5 +21,11 @@ namespace SP.Infra.Data.Repository
         {
             return Buscar(s => s.FornecedorId == fornecedorId).ToList();
         }
+
+
+        public ICollection<Servico> ObterPorAno(string ano)
+        {
+            return Buscar(s => s.Data.Year.ToString() == ano).ToList();
+        }
     }
 }

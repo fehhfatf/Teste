@@ -22,5 +22,11 @@ namespace SP.Domain.Services
         {
             return _servicoRepository.ObterPorFornecedorId(fornecedorId);
         }
+
+
+        public ICollection<Servico> ObterPorAno(string ano)
+        {
+            return _servicoRepository.ObterPorAno(ano);
+        }
     }
 }

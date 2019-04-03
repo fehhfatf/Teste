@@ -9,67 +9,48 @@
 <p>
     @Html.ActionLink("Adicionar", "Create")
 </p>
-
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Cliente.Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cliente.Bairro)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cliente.Cidade)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cliente.Estado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tipo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Valor)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Data)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cliente.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cliente.Bairro)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cliente.Cidade)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cliente.Estado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tipo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Valor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Data)
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "Edit", new { id = item.ServicoId }) |
-                @Html.ActionLink("Detalhes", "Details", new { id = item.ServicoId }) |
-                @Html.ActionLink("Excluir", "Delete", new { id = item.ServicoId })
-            </td>
-        </tr>
-    }
-
-</table>
+De:
+<input type="date" id="de"/>
+Até:
+<input type="date" id="ate"/>
+Filtar por:
+<select id="filtrarPor">
+    <option value="nada">Selecione</option>
+    <option value="cliente">Cliente</option>
+    <option value="estado">Estado</option>
+    <option value="cidade">Cidade</option>
+    <option value="bairro">Bairro</option>
+    <option value="tipoServico">Tipo de Serviço</option>
+</select>
+contendo:
+<input type="text" id="contendo" />
+Ordenar por:
+<select id="ordenar">
+    <option value="nada">Selecione</option>
+    <option value="valorMinimo">Valor mínimo</option>
+    <option value="valorMaximo">Valor máximo</option>
+</select>
+<button id="pesquisar">Pesquisar</button>
+<div id="divTabela"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#pesquisar").click(function (e) {
+            $.ajax({
+                type: "GET",
+                url: "/Servico/Pesquisar",
+                contentType: "application/json",
+                data: { de: $("#de").val(), ate: $("#ate").val(), filtrarPor: $("#filtrarPor").val(), contendo: $("#contendo").val(), ordenar: $("#ordenar").val() },
+                dataType: "html",
+                success: function (data) {
+                    $('#divTabela').html(data);
+                }
+            });            
+            return false;
+        });
+    });
+</script>
 
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryAjax")
+    @Scripts.Render("~/bundles/jqueryval")
 }

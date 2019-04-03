@@ -137,7 +137,7 @@ namespace UI.SP.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "FornecedorId,Nome")] FornecedorViewModel fornecedorViewModel)
+        public ActionResult Edit(FornecedorViewModel fornecedorViewModel)
         {
             if (ModelState.IsValid)
             {
