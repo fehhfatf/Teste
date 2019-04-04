@@ -21,12 +21,21 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Excluir" class="btn btn-default" /> |
-            @Html.ActionLink("Voltar a lista", "Index")
+            
+        @{if (Model.Clientes.Count == 0 && Model.Servicos.Count == 0)
+        {
+            <input type="submit" value="Excluir" class="btn btn-default" />
+        }
+        else
+        {
+            <p class="alert-danger">Exclusão não pode ser realizada, fornecedor tem clientes e serviços cadastrados!</p>
+        }}
+        @Html.ActionLink("Voltar a lista", "Index")
         </div>
     }
 </div>

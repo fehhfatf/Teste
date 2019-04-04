@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
-using SP.Application.ViewModels;
-using UI.SP.Models;
+﻿using Microsoft.AspNet.Identity;
 using SP.Application.Interfaces;
-using SP.Infra.CrossCutting.MvcFilters;
-using Microsoft.AspNet.Identity;
+using SP.Application.ViewModels;
+using System;
+using System.Net;
+using System.Web.Mvc;
 
 namespace UI.SP.Controllers
 {

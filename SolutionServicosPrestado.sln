@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{5FE9F640-207E-4CCD-A005-C0F593306A4A}"
 EndProject
@@ -26,8 +26,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.SP", "src\UI.SP\UI.SP.csproj", "{6FB5F74F-FE4A-4EB7-A7C0-C75C66BC4AEA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Infra.CrossCutting.IoC", "src\SP.Infra.CrossCutting.IoC\SP.Infra.CrossCutting.IoC.csproj", "{D4E1A67B-5059-422E-A919-354AF9B4DA76}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SP.Infra.CrossCutting.MvcFilters", "src\SP.Infra.CrossCutting.MvcFilters\SP.Infra.CrossCutting.MvcFilters.csproj", "{35648F0E-F60E-44E8-80E7-EDF4A384E937}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,10 +53,6 @@ Global
 		{D4E1A67B-5059-422E-A919-354AF9B4DA76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4E1A67B-5059-422E-A919-354AF9B4DA76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4E1A67B-5059-422E-A919-354AF9B4DA76}.Release|Any CPU.Build.0 = Release|Any CPU
-		{35648F0E-F60E-44E8-80E7-EDF4A384E937}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{35648F0E-F60E-44E8-80E7-EDF4A384E937}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{35648F0E-F60E-44E8-80E7-EDF4A384E937}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{35648F0E-F60E-44E8-80E7-EDF4A384E937}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,6 +65,5 @@ Global
 		{EA069801-DA89-4050-866C-DFDFF4A2D366} = {6327A530-92BC-4E42-B996-F96B1482433D}
 		{6FB5F74F-FE4A-4EB7-A7C0-C75C66BC4AEA} = {5FE9F640-207E-4CCD-A005-C0F593306A4A}
 		{D4E1A67B-5059-422E-A919-354AF9B4DA76} = {34871457-543E-4662-89E8-1E1DC18FC0FD}
-		{35648F0E-F60E-44E8-80E7-EDF4A384E937} = {34871457-543E-4662-89E8-1E1DC18FC0FD}
 	EndGlobalSection
 EndGlobal

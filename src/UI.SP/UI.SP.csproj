@@ -180,6 +180,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="App_Start\ClaimsAuthorizeAttribute.cs" />
     <Compile Include="Helpers\PermissionHelper.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -285,10 +286,6 @@
     <ProjectReference Include="..\SP.Infra.CrossCutting.IoC\SP.Infra.CrossCutting.IoC.csproj">
       <Project>{d4e1a67b-5059-422e-a919-354af9b4da76}</Project>
       <Name>SP.Infra.CrossCutting.IoC</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SP.Infra.CrossCutting.MvcFilters\SP.Infra.CrossCutting.MvcFilters.csproj">
-      <Project>{35648f0e-f60e-44e8-80e7-edf4a384e937}</Project>
-      <Name>SP.Infra.CrossCutting.MvcFilters</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

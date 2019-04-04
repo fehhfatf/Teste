@@ -1,22 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity.Owin;
+using SP.Application.Interfaces;
+using SP.Application.ViewModels;
+using System;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using SP.Application.ViewModels;
 using UI.SP.Models;
-using SP.Application.Interfaces;
-using System.Threading.Tasks;
-using System.Globalization;
-using System.Security.Claims;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using SP.Infra.CrossCutting.MvcFilters;
-using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace UI.SP.Controllers
 {
@@ -25,10 +17,16 @@ namespace UI.SP.Controllers
     public class FornecedorController : Controller
     {
         private readonly IFornecedorAppService _fornecedorAppService;
+        private readonly IClienteAppService _clienteAppService;
+        private readonly IServicoAppService _servicosAppService;
 
-        public FornecedorController(IFornecedorAppService fornecedorAppService)
+        public FornecedorController(IFornecedorAppService fornecedorAppService
+                                    , IClienteAppService clienteAppService
+                                    , IServicoAppService servicosAppService)
         {
             _fornecedorAppService = fornecedorAppService;
+            _clienteAppService = clienteAppService;
+            _servicosAppService = servicosAppService;
         }
 
         private ApplicationSignInManager _signInManager;

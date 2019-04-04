@@ -6,11 +6,6 @@ using SP.Domain.Interfaces.Service;
 using SP.Domain.Services;
 using SP.Infra.Data.Context;
 using SP.Infra.Data.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SP.Infra.CrossCutting.IoC
 {
