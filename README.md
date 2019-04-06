@@ -2,8 +2,7 @@
 
 Usuários
   E-mails:
-      admin@email.com.br (Login administrador para adicionar fornecedores no sistema)
-      empresa1@email.com.br (Login de fornecedor para adicionar clientes e serviços)
+      admin@email.com.br (Login administrador para adicionar fornecedores no sistema)      
       empresa2@email.com.br (Login de fornecedor para adicionar clientes e serviços)
       empresa3@email.com.br (Login de fornecedor para adicionar clientes e serviços)
       empresa4@email.com.br (Login de fornecedor para adicionar clientes e serviços)
